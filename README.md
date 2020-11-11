@@ -14,7 +14,7 @@
 
 可以满速下载magnet(磁力链接)
 
-![截图录屏_选择区域_20201111130532](/home/coolzlay/mywork/workspace/test/aria2All/readme.assets/截图录屏_选择区域_20201111130532.png)
+![截图录屏_选择区域_20201111130532](readme.assets/截图录屏_选择区域_20201111130532.png)
 
 
 
