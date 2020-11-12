@@ -1,0 +1,11 @@
+{
+  "name": "aria2",
+    "script": "aria2c",
+    "args": [
+        "--conf-path=aria2.conf"
+    ],
+   "error_file":"./log/err.log",
+    "out_file":"./log/out.log",
+    "exec_interpreter": "",
+    "exec_mode": "fork"
+}

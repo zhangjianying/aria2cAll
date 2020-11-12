@@ -62,7 +62,10 @@ _restartAria2c()
 {
    _stopAria2c
    cd $work_dir
-   nohup $work_dir/aria2c --conf-path=$work_dir/aria2.conf >> /dev/shm/aria2c.log 2>&1 &
+   rm ./log/*
+   #nohup $work_dir/aria2c --conf-path=$work_dir/aria2.conf >> /dev/shm/aria2c.log 2>&1 &
+   # $work_dir/aria2c --conf-path=$work_dir/aria2.conf -D
+   $work_dir/node_modules/pm2/bin/pm2 restart pm2.json
 }
 
 # 启动web服务
@@ -77,6 +80,7 @@ _restartWebServer()
 _stopWebServer()
 {
    cd $work_dir
+   
    pid=$(ps -ef|grep http-server|grep -v grep |awk '{printf $2}')
    if [[ -n "$pid" ]];  then
       kill -9 $pid
@@ -86,6 +90,7 @@ _stopWebServer()
 _stopAria2c()
 {
    cd $work_dir
+   $work_dir/node_modules/pm2/bin/pm2 stop pm2.json
    pid=$(ps -ef|grep $work_dir/aria2c|grep -v grep |awk '{printf $2}')
    if [[ -n "$pid" ]];  then
       kill -9 $pid
